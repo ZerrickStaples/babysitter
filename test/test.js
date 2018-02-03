@@ -13,5 +13,8 @@ describe("Babysitter kata", () => {
         it("Return $12 for one hour", () => {
             expect(startTimeRate()).to.equal(12);
         });
+        it("Return $12 per hour for multiple hours", () => {
+            expect(startTimeRate()).to.equal(36);
+        })
     });
 });
