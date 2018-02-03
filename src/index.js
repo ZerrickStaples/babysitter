@@ -9,5 +9,5 @@ export const startTimeRate = (startTime, bedtime) => {
 }
 
 export const bedtimeRate = () => {
-    
+    return 8;
 }
