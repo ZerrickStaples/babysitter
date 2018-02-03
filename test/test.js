@@ -11,10 +11,10 @@ describe("Canary test", () => {
 describe("Babysitter kata", () => {
     describe("Start time to bedtime", () => {
         it("Return $12 for one hour", () => {
-            expect(startTimeRate()).to.equal(12);
+            expect(startTimeRate(5, 6)).to.equal(12);
         });
         it("Return $12 per hour for multiple hours", () => {
-            expect(startTimeRate()).to.equal(36);
+            expect(startTimeRate(5, 8)).to.equal(36);
         })
     });
 });
