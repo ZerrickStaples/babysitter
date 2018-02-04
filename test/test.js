@@ -1,6 +1,6 @@
 import Mocha from 'mocha';
 import { expect } from 'chai';
-import { startTimeRate, bedtimeRate } from '../src/index';
+import { startTimeRate, bedtimeRate, endTimeRate } from '../src/index';
 
 describe("Canary test", () => {
     it("True equals true", () => {
@@ -30,5 +30,10 @@ describe("Babysitter kata", () => {
         it("Return $8 per hour for multiple hours", () => {
             expect(bedtimeRate(9, 12)).to.equal(24);
         });
-    })
+    });
+    describe("Midnight to end", () => {
+        it("Return $16 for one hour", () => {
+            expect(endTimeRate()).to.equal(16);
+        });
+    });
 });

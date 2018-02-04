@@ -10,6 +10,10 @@ export const startTimeRate = (startTime, bedtime) => {
 
 export const bedtimeRate = (bedtime, midnight) => {
     let hoursWorked = midnight - bedtime;
-    
+
     return 8 * hoursWorked;
+}
+
+export const endTimeRate = () => {
+    
 }
