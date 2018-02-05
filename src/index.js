@@ -16,8 +16,10 @@ export const bedtimeRate = (bedtime, midnight) => {
 
 export const endTimeRate = (midnight, endTime) => {
     midnight = 0;
+    if(endTime > 4) {
+        endTime = 4;
+    }
     let hoursWorked = endTime - midnight;
-
 
     return 16 * hoursWorked;
 }
