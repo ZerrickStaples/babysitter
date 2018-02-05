@@ -1,25 +1,32 @@
+let hoursWorked;
+
 export const startTimeRate = (startTime, bedtime) => {
-    if(startTime < 5) {
-        startTime = 5;
-    }
+  let isStartTimeBefore5PM = Boolean(startTime < 5);
 
-    let hoursWorked = bedtime - startTime;
+  if (isStartTimeBefore5PM) {
+    startTime = 5;
+  }
 
-    return 12 * hoursWorked;
-}
+  hoursWorked = bedtime - startTime;
+
+  return 12 * hoursWorked;
+};
 
 export const bedtimeRate = (bedtime, midnight) => {
-    let hoursWorked = midnight - bedtime;
+  hoursWorked = midnight - bedtime;
 
-    return 8 * hoursWorked;
-}
+  return 8 * hoursWorked;
+};
 
 export const endTimeRate = (midnight, endTime) => {
-    midnight = 0;
-    if(endTime > 4) {
-        endTime = 4;
-    }
-    let hoursWorked = endTime - midnight;
+  midnight = 0;
+  let isEndTimeAfter4AM = Boolean(endTime > 4);
 
-    return 16 * hoursWorked;
-}
+  if (isEndTimeAfter4AM) {
+    endTime = 4;
+  }
+
+  hoursWorked = endTime - midnight;
+
+  return 16 * hoursWorked;
+};
