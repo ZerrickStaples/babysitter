@@ -32,5 +32,9 @@ export const endTimeRate = (midnight, endTime) => {
 };
 
 export const calculateTotalPay = (startTime, bedtime, midnight, endTime) => {
-  return 0;
+  return (
+    startTimeRate(startTime, bedtime) +
+    bedtimeRate(bedtime, midnight) +
+    endTimeRate(midnight, endTime)
+  );
 };
