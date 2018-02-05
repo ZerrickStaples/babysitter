@@ -30,3 +30,7 @@ export const endTimeRate = (midnight, endTime) => {
 
   return 16 * hoursWorked;
 };
+
+export const calculateTotalPay = (startTime, bedtime, midnight, endTime) => {
+  return 0;
+};

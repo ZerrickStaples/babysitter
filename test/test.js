@@ -1,6 +1,11 @@
 import Mocha from "mocha";
 import { expect } from "chai";
-import { startTimeRate, bedtimeRate, endTimeRate } from "../src/index";
+import {
+  startTimeRate,
+  bedtimeRate,
+  endTimeRate,
+  calculateTotalPay
+} from "../src/index";
 
 describe("Canary test", () => {
   it("True equals true", () => {
@@ -42,6 +47,11 @@ describe("Babysitter kata", () => {
 
     it("Restrict end time to 4 AM", () => {
       expect(endTimeRate(12, 5)).to.equal(64);
+    });
+  });
+  describe("Calculate final pay", () => {
+    it("Calculate total pay for one shift", () => {
+      expect(calculateTotalPay(5, 8, 12, 4)).to.equal(132);
     });
   });
 });
