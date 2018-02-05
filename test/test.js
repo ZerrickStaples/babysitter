@@ -53,5 +53,8 @@ describe("Babysitter kata", () => {
     it("Calculate total pay for one shift", () => {
       expect(calculateTotalPay(5, 8, 12, 4)).to.equal(132);
     });
+    it("Calculate total pay if midnight is endTime", () => {
+      expect(calculateTotalPay(5, 8, 12, 12)).to.equal(68);
+    });
   });
 });
