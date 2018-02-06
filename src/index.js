@@ -19,14 +19,16 @@ export const bedtimeRate = (bedtime, midnight) => {
 };
 
 export const endTimeRate = (midnight, endTime) => {
-  midnight = 0;
   let isEndTimeAfter4AM = Boolean(endTime > 4);
 
-  if (isEndTimeAfter4AM) {
+  if (midnight == endTime) {
+    hoursWorked = 0;
+  } else if (isEndTimeAfter4AM) {
     endTime = 4;
+    hoursWorked = endTime;
+  } else {
+    hoursWorked = endTime - 0;
   }
-
-  hoursWorked = endTime - midnight;
 
   return 16 * hoursWorked;
 };
